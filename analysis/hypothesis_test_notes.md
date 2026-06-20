@@ -79,3 +79,51 @@ evidence that the new campaign genuinely improves conversion.
 However, guardrail metrics must be checked before final
 launch decision — particularly support ticket rate (+10%)
 and revenue per converted user (-$859).
+
+## Guardrail Metrics Evaluation
+
+### Guardrail 1: Refund Rate
+| | Control | Treatment |
+|---|---|---|
+| Refund Rate | 0.00% | 0.42% |
+
+**Risk Assessment: MEDIUM RISK ⚠️**
+The Treatment group has a small but non-zero refund rate
+while Control has none. This means some users who converted
+under the new campaign immediately requested refunds.
+This could indicate the campaign is creating false
+expectations about the product.
+
+### Guardrail 2: Support Ticket Rate
+| | Control | Treatment |
+|---|---|---|
+| Support Ticket Rate | 14.72% | 24.76% |
+
+**Risk Assessment: HIGH RISK 🔴**
+Support ticket rate increased by 10 percentage points in
+the Treatment group. This is the most concerning guardrail
+finding. Nearly 1 in 4 Treatment users raised a support
+ticket compared to 1 in 7 Control users. This signals
+the new campaign may be causing confusion, unmet
+expectations, or product dissatisfaction.
+
+### Guardrail 3: Revenue Per Converted User
+| | Control | Treatment |
+|---|---|---|
+| Revenue Per Converted User | $1,630.10 | $770.41 |
+
+**Risk Assessment: HIGH RISK 🔴**
+Although Treatment converts more users, each converted
+user generates 53% less revenue than Control converted
+users. This suggests the campaign may be attracting
+lower-value customers or users on cheaper plans.
+Higher conversion volume does not guarantee higher
+total revenue if revenue per user drops significantly.
+
+### Overall Guardrail Conclusion
+Two out of three guardrail metrics show HIGH RISK.
+Despite the statistically significant improvement in
+paid conversion rate, the guardrail findings suggest
+a full immediate launch carries meaningful business risk.
+A selective or phased launch is recommended over
+full immediate rollout.
