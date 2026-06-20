@@ -52,3 +52,30 @@ should launch the new campaign to all users. A statistically
 significant result in the primary metric, combined with 
 acceptable guardrail metrics, would support a full launch 
 recommendation.
+
+## Test Results
+
+| Input | Value |
+|---|---|
+| Control Users | 693 |
+| Treatment Users | 715 |
+| Control Conversions | 22 |
+| Treatment Conversions | 50 |
+| Control Conversion Rate | 3.17% |
+| Treatment Conversion Rate | 6.99% |
+| Z-Statistic | 3.252 |
+| P-Value (one-tailed) | 0.000573 |
+| Significant at α=0.05 | YES |
+
+## Decision
+P-value (0.000573) < α (0.05) → Reject H₀
+
+## Business Interpretation
+The Treatment campaign produces a statistically significant
+improvement in paid conversion rate. The probability of this
+result occurring by chance is less than 0.06%. This is strong
+evidence that the new campaign genuinely improves conversion.
+
+However, guardrail metrics must be checked before final
+launch decision — particularly support ticket rate (+10%)
+and revenue per converted user (-$859).
