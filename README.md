@@ -70,3 +70,71 @@ care about most.
   increasing operational costs
 - This is why guardrail metrics (refund rate, support ticket rate, 
   revenue per converted user) must be checked alongside conversion rate
+
+  ## 4. KPI Tree Summary
+The KPI tree breaks Paid Conversion Rate into 3 primary drivers:
+- **Acquisition** — Landing Page Visit Rate, Traffic Source Rate
+- **Activation** — Trial Start Rate, Onboarding Completion Rate
+- **Engagement** — Engagement Score, Days to Convert
+
+Guardrail Metrics: Refund Rate, Support Ticket Rate, 
+Revenue Per Converted User
+
+KPI Tree image: outputs/kpi_tree.png
+
+---
+
+## 5. Experiment Analysis Approach
+- Dataset: 1,408 users split into Control (693) 
+  and Treatment (715)
+- Cleaned data: removed 8 duplicates, filled missing 
+  device_type and traffic_source with Unknown
+- Calculated all metrics by group
+- Analyzed by 4 segments: Region, Device Type, 
+  Plan Type, Traffic Source
+
+---
+
+## 6. Hypothesis Test Summary
+- Test: One-tailed Z-test for proportions
+- Metric tested: Paid Conversion Rate
+- Z-Statistic: 3.252
+- P-Value: 0.000573
+- Result: Reject H₀ — statistically significant improvement
+
+---
+
+## 7. Guardrail Metrics Considered
+
+| Metric | Control | Treatment | Risk |
+|---|---|---|---|
+| Refund Rate | 0.00% | 0.42% | ⚠️ Medium |
+| Support Ticket Rate | 14.72% | 24.76% | 🔴 High |
+| Revenue Per Converted User | $1,630.10 | $770.41 | 🔴 High |
+
+---
+
+## 8. Final Recommendation
+**Launch to selected segments only (North and South regions)**
+
+Full launch not recommended due to high support ticket 
+rate and drop in revenue per converted user.
+Monitor for 30 days before full rollout.
+
+---
+
+## 9. Assumptions and Limitations
+- 8 duplicate user IDs removed, kept first occurrence
+- Missing device_type (18) and traffic_source (24) 
+  labeled as Unknown
+- Missing engagement_score (14) excluded from averages
+- Missing days_to_convert expected for non-converted users
+- Revenue outliers (18 users) kept but flagged
+- Limited experiment duration may affect results
+
+---
+
+## 10. Screenshots Included
+- screenshots/summary_metrics.png
+- screenshots/hypothesis_test_output.png
+- screenshots/kpi_tree_preview.png
